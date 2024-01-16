@@ -1,25 +1,37 @@
+import java.io.*;
 import java.util.*;
 
-public class Main{
-    public static void main(String[] args){
-		Scanner scan = new Scanner(System.in);
-		int n = scan.nextInt();  
-		int m = scan.nextInt();  
+public class Main {
+	public static void main(String[] args) throws Exception{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st;
+		st = new StringTokenizer(br.readLine(), " ");
+		
+		int n = Integer.parseInt(st.nextToken());
+		int m = Integer.parseInt(st.nextToken());
 		
 		int N[] = new int[n];
-		int M[] = new int[m];
 		
 		for(int i=0; i<m; i++) {
-			int a = scan.nextInt();
-			int b = scan.nextInt();
-			int c = scan.nextInt();
+			st = new StringTokenizer(br.readLine(), " ");
+			
+			int a = Integer.parseInt(st.nextToken());
+			int b = Integer.parseInt(st.nextToken());
+			int c = Integer.parseInt(st.nextToken());
 			
 			for(int j=a-1; j<b; j++) {
-			    N[j] = c;
-			}		
+				N[j] = c;
+			}
 		}
+		
 		for(int i : N) {
-			System.out.print(i + " ");
+			bw.write(i + " ");
 		}
-    }
+		
+		br.close();
+		bw.close();
+
+	}
+
 }
